@@ -4,7 +4,7 @@ class Solution {
         思路一：排序输出前k个
         复杂度分析：
         时间复杂度为O(nlogn);
-        空间复杂度为O(k).
+        空间复杂度为O(logn).
         Arrays.sort(arr);
         int[] temp = new int[k];
         for (int i = 0; i < k; i++) {
