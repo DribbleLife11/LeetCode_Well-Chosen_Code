@@ -34,3 +34,26 @@ public class CountBits {
         return res;
     }
 }
+
+/*
+解法2：找规律
+如果是奇数的话，它的二进制中1的个数一定比它前一个数多1个
+如果是偶数的话，它的二进制中1的个数一定和它除以2后的数相同
+0肯定只有0个，所以可以开始区分奇偶数来进行统计。
+*/
+class Solution {
+    public int[] countBits(int num) {
+        int[] res = new int[num+1];
+        res[0] = 0;
+        for (int i = 1; i <= num; i++) {
+            //奇数
+            if (i % 2 == 1) {
+                res[i] = res[i-1] + 1;
+            } else {
+                //偶数
+                res[i] = res[i/2];
+            }
+        }
+        return res;
+    }
+}
