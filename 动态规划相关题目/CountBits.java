@@ -57,3 +57,22 @@ class Solution {
         return res;
     }
 }
+
+/*
+动态规划+最低有效位
+通过观察605 = 1001011101
+       302 = 100101110
+发现x与x/2的关系只有低位不同，可以把x/2看作x移除最低有效位的结果。
+
+写出状态转移函数：
+P(x) = P(x / 2) + (x mod 2)
+*/
+class Solution {
+    public int[] countBits(int num) {
+        int[] res = new int[num+1];
+        for (int i = 1; i <= num; i++) {
+            res[i] = res[i >> 1] + (i & 1);
+        }
+        return res;
+    }
+}
