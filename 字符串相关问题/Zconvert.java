@@ -1,4 +1,4 @@
-class Solution {
+class Zconvert {
     public String convert(String s, int numRows) {
         if (numRows < 2) return s;
         List<StringBuilder> rows = new ArrayList<>();
